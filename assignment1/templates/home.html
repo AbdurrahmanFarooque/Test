@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Home</title>
+</head>
+<body>
+          {% for m in messages %}
+          {{ m }}
+          {% endfor %}
+          {{ user.id }}
+          {{ user.name }}
+          {{ user.email }}
+          {{ user.age }}
+          <img src="{{ user.photo.url }}" width="100px" height="100px" alt="">
+          <a href="{% url 'assignment1app:update' user.id %}">Update</a>
+          <a href="{% url 'assignment1app:delete' user.id %}">Delete</a>
+          <a href="{% url 'assignment1app:logout' %}">Log Out</a>
+</body>
+</html>
